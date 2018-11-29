@@ -93,3 +93,4 @@ jobs:
           $(_SignArgs)
           $(_OfficialBuildIdArgs)
         displayName: Windows Build / Publish
+        timeoutInMinutes: 5
