@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>WinFormsTestLibs.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.Odbc" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+    <PackageReference Include="System.DirectoryServices" Version="4.5.0" />
+    <ProjectReference Include="..\..\..\..\src\System.Windows.Forms.csproj" />
+    <Reference Include="Accessibility">
+      <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.desktopui.app\3.0.0-alpha-27106-4\ref\netcoreapp3.0\Accessibility.dll</HintPath>
+    </Reference>
+    <Reference Include="GenStrings">
+      <HintPath>\\winformssrvvm01\NETCoreMigration\RTTestCasesMigration\GenStrings.dll</HintPath>
+    </Reference>
+    <Reference Include="MDLog">
+      <HintPath>..\MDLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ObjectModel">
+      <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.netcore.app\3.0.0-preview-27109-05\ref\netcoreapp3.0\System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.netcore.app\3.0.0-preview-27109-05\ref\netcoreapp3.0\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.DispatchProxy">
+      <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.netcore.app\3.0.0-preview-27109-05\ref\netcoreapp3.0\System.Reflection.DispatchProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.desktopui.app\3.0.0-alpha-27106-4\ref\netcoreapp3.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.desktopui.app\3.0.0-alpha-27106-4\ref\netcoreapp3.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+</Project>
+
