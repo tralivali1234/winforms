@@ -12,7 +12,7 @@ using System.Threading;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using WFCTestLib.Util;
 using System.IO.IsolatedStorage;
 using System.Xml;

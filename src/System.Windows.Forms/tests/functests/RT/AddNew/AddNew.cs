@@ -211,6 +211,7 @@ public class TestAddNew : ReflectBase
         //sr.IncCounters(ADDINGTOEMPTY, events, "Wrong events, VSCurrent Bug# 357429", p.log);
         return sr;
     }
+
     [Scenario("AddNew from first row, AllowNew=false")]
     public ScenarioResult FromFirstRecord2(TParams p)
     {

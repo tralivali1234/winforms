@@ -152,7 +152,7 @@ namespace ReflectTools
 				(uint)System.Diagnostics.Process.GetCurrentProcess().Id,
 				0,
 				WINEVENT.OUTOFCONTEXT);
-			WFCTestLib.Log.Log l = ReflectBase.Log;
+			WFCTestLib.Logging.Log l = ReflectBase.Log;
 			if (null != l)
 			{ l.WriteLine("Accessible Hool Event returned: " + _WinEventHookToken.ToString()); }
 			if (IntPtr.Zero == _WinEventHookToken)

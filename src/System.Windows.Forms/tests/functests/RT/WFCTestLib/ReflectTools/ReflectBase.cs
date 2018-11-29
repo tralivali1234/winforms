@@ -12,7 +12,7 @@ using System.Threading;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using WFCTestLib.Util;
 using System.Security.Principal;
 using System.Security.Policy;
@@ -110,8 +110,8 @@ namespace ReflectTools
         // Note: this is static so that you can access the log from a place outside your scenario code, like
         // in helper functions.
         //
-        protected static WFCTestLib.Log.Log log = null;
-		public static WFCTestLib.Log.Log Log
+        protected static WFCTestLib.Logging.Log log = null;
+		public static WFCTestLib.Logging.Log Log
 		{ get { return log; } }
         // <doc>
         // <desc>
@@ -451,7 +451,7 @@ namespace ReflectTools
             if (log == null)
             {
                 LibSecurity.UnrestrictedFileIO.Assert();
-                log = new WFCTestLib.Log.Log(LogFilename);
+                log = new WFCTestLib.Logging.Log(LogFilename);
                 CodeAccessPermission.RevertAssert();
             }
 

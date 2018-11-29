@@ -8,7 +8,7 @@ using System.Security;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using ReflectTools;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using WFCTestLib.Util;
 using System.IO;
 

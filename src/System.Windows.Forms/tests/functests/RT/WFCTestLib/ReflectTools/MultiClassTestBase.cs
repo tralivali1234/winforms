@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 
 using ReflectTools;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 
 namespace ReflectTools {
 	/// <remarks>

@@ -10,7 +10,7 @@ using System.Drawing.Printing;
 
 using ReflectTools;
 using ReflectTools.AutoPME;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using WFCTestLib.Util;
 
 using StringTable = WFCTestLib.Util.StringTable;

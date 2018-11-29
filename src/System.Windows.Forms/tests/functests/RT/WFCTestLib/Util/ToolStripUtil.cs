@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using WFCTestLib.Util;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using ReflectTools;
 
 namespace WFCTestLib.Util

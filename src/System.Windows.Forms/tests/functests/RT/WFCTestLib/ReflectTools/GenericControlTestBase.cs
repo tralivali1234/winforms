@@ -3,7 +3,7 @@ using System.Collections;
 using System.Windows.Forms;
 
 using ReflectTools;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using WFCTestLib.Util;
 
 namespace ReflectTools {

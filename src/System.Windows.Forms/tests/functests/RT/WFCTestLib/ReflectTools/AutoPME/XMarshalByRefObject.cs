@@ -1,5 +1,5 @@
 using System;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using WFCTestLib.Util;
 using System.Runtime.Remoting;
 namespace ReflectTools.AutoPME {

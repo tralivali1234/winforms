@@ -998,14 +998,14 @@ namespace WFCTestLib.Util
 			}
         }
 
-        public RandomUtil(Log.Log log)
+        public RandomUtil(Logging.Log log)
             : this()
         {
             this.Log = log;
         }
 
-        private Log.Log log = null;
-        public Log.Log Log
+        private Logging.Log log = null;
+        public Logging.Log Log
         {
             get
             {

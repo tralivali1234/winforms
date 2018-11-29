@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using ReflectTools;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -570,7 +570,7 @@ namespace WFCTestLib.Util
 
 		protected void OnEventFired(EventData eventInfo)
 		{
-			Log.Log tempLog = OutputLog;
+			Logging.Log tempLog = OutputLog;
 			if (null != tempLog)
 			{ tempLog.WriteLine(eventInfo.ToString()); }
 			EventHandler<EventFiredEventArgs> handler = EventFired;
@@ -583,12 +583,12 @@ namespace WFCTestLib.Util
 		/// Gets or sets a log target to output all events to.  When this value is set, all events will immediately
 		/// cause an output to the logfile.
 		/// </summary>
-		public Log.Log OutputLog
+		public Logging.Log OutputLog
 		{
 			get { return _OutputLog; }
 			set { _OutputLog = value; }
 		}
-		private Log.Log _OutputLog;
+		private Logging.Log _OutputLog;
 
 		#region IDisposable Members
 		private int _DisposeCount = 0;

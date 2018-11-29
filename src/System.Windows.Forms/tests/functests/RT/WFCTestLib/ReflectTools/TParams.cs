@@ -1,6 +1,6 @@
 using System;
 using WFCTestLib.Util;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 
 namespace ReflectTools
 {

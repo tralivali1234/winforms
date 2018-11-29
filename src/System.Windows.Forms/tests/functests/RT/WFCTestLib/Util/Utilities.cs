@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using WFLog = WFCTestLib.Log;
+using WFLog = WFCTestLib.Logging;
 using ReflectTools;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;

@@ -9,7 +9,7 @@ namespace System.Windows.Forms.Func.Tests
     {       
 
         /// <summary>
-        /// Calls StartProcess for the ProcessStartInfo containing the bin path of this directory plus the given byPathFromBinToExe; also ensures that repo\.dotnet\dotnet.exe exists
+        /// Calls StartProcess for the given byPathFromBinToExe; also ensures that repo\.dotnet\dotnet.exe exists
         /// </summary>
         /// <param name="byPathFromBinToExe">The string path to add onto the end of the bin path in order to reach the exe to run; trimed for tailing \'s</param>
         /// <seealso cref="StartProcess(ProcessStartInfo)"/>

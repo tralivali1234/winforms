@@ -5,7 +5,7 @@ namespace WFCTestLib.Util
     using System.Reflection;
     using System.Drawing;
     using System.Windows.Forms;
-    using WFCTestLib.Log;
+    using WFCTestLib.Logging;
 
 
     // <doc>

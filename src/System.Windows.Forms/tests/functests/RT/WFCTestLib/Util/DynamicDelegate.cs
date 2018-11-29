@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Security;
 using System.Security.Permissions;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using ReflectTools;
 using System.Collections.ObjectModel;
 

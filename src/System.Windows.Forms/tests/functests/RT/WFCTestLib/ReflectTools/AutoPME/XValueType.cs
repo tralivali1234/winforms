@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using ReflectTools;
 using ReflectTools.AutoPME;
 using WFCTestLib.Util;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 
 namespace ReflectTools.AutoPME
 {
