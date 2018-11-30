@@ -47,10 +47,11 @@ jobs:
           value: 'Windows.10.Amd64.Open'
 
         # Only include this variable group for public builds, otherwise the group will not be found and the build will fail
-        - ${{ if eq(parameters.runAsPublic, 'true') }}:
-          - group: Helix Anonymous
-          - name: _HelixAccessToken
-            value: $(BotAccount-dotnet-github-anon-kaonashi-bot-helix-token)
+        # todo: uncomment once we go public
+        # - ${{ if eq(parameters.runAsPublic, 'true') }}:
+        #   - group: Helix Anonymous
+        #   - name: _HelixAccessToken
+        #     value: $(BotAccount-dotnet-github-anon-kaonashi-bot-helix-token)
 
         - name: _WinformsControlsTestBinDir
           value: $(BUILD.SOURCESDIRECTORY)\artifacts\bin\WinformsControlsTest\$(_BuildConfig)\netcoreapp3.0
@@ -93,9 +94,10 @@ jobs:
           # needed for helix jobs
           - name: _HelixAgentPool
             value: 'Windows.10.Amd64'
-          - group: DotNet-HelixApi-Access
-          - name: _HelixAccessToken
-            value: $(HelixApiAccessToken)
+          # todo: uncomment once we go public
+          # - group: DotNet-HelixApi-Access
+          # - name: _HelixAccessToken
+          #   value: $(HelixApiAccessToken)
 
       strategy:
         matrix:
@@ -146,7 +148,7 @@ jobs:
           # secret variable set in Azure DevOps build definition
           # todo: when we go public, get this value from the Helix Anonymous variable group
           # for internal builds, get this value from the DotNet-HelixApi-Access variable group
-          HelixAccessToken: $(_HelixAccessToken)
+          HelixAccessToken: $(helix-token) # todo: replace with $(_HelixAccessToken) when we go public
           #HelixPreCommands: ''
           #HelixPostCommands: ''
           WorkItemDirectory: $(_HelixStagingDir)
