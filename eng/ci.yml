@@ -143,7 +143,7 @@ jobs:
       - template: /eng/common/templates/steps/helix-publish.yml
         parameters:
           HelixSource: $(_HelixSource)
-          HelixType: ̓'tests/functional'
+          HelixType: 'tests/functional'
           HelixTargetQueues: $(_HelixAgentPool)
           # secret variable set in Azure DevOps build definition
           # todo: when we go public, get this value from the Helix Anonymous variable group
