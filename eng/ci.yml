@@ -45,6 +45,10 @@ jobs:
         # needed for helix jobs
         - name: _HelixAgentPool
           value: 'Windows.10.Amd64.Open'
+        - group: Helix Anonymous
+        - name: _HelixAccessToken
+          value: $(BotAccount-dotnet-github-anon-kaonashi-bot-helix-token)
+
         - name: _WinformsControlsTestBinDir
           value: $(BUILD.SOURCESDIRECTORY)\artifacts\bin\WinformsControlsTest\$(_BuildConfig)\netcoreapp3.0
         - name: _WinformsFuncTestBinDir
@@ -52,26 +56,22 @@ jobs:
         - name: _HelixStagingDir
           value: $(BUILD.STAGINGDIRECTORY)\helix\functests
 
-        # Override some values if we're building internally
+        # Override/include some variables if we're building internally
         - ${{ if eq(parameters.runAsPublic, 'false') }}:
-
-          # note: You have to use list syntax here (-name: value) or you will get errors about declaring the same variable multiple times
-          - name: _PublishType
-            value: blob
-          - name: _SignType
-            value: real
-          - name: _DotNetPublishToBlobFeed
-            value: true
-          - group: DotNet-Blob-Feed
-          - group: DotNet-Symbol-Server-Pats
-          - name: _PublishBlobFeedUrl
-            value: https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
 
           # note: Even though they are referenced here, user defined variables (like $(_SignType)) are not resolved 
           # until the agent is running on the machine. They can be overridden any time before they are resolved,
           # like in the job matrix below (see Build_Debug)
+          - name: _SignType
+            value: real
           - name: _SignArgs
             value: /p:DotNetSignType=$(_SignType) /p:TeamName=$(_TeamName)
+
+          # needed for darc (dependency flow) publishing
+          - name: _PublishType
+            value: blob
+          - name: _DotNetPublishToBlobFeed
+            value: true
           - name: _PublishArgs
             value: /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
               /p:DotNetPublishBlobFeedUrl=$(_PublishBlobFeedUrl)
@@ -81,8 +81,18 @@ jobs:
           - name: _OfficialBuildIdArgs
             value: /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
 
+          - group: DotNet-Blob-Feed
+          - group: DotNet-Symbol-Server-Pats
+          - name: _PublishBlobFeedUrl
+            value: https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
+
+
+          # needed for helix jobs
           - name: _HelixAgentPool
             value: 'Windows.10.Amd64'
+          - group: DotNet-HelixApi-Access
+          - name: _HelixAccessToken
+            value: $(HelixApiAccessToken)
 
       strategy:
         matrix:
@@ -133,7 +143,7 @@ jobs:
           # secret variable set in Azure DevOps build definition
           # todo: when we go public, get this value from the Helix Anonymous variable group
           # for internal builds, get this value from the DotNet-HelixApi-Access variable group
-          HelixAccessToken: $(helix-token) 
+          HelixAccessToken: $(_HelixAccessToken)
           #HelixPreCommands: ''
           #HelixPostCommands: ''
           WorkItemDirectory: $(_HelixStagingDir)
