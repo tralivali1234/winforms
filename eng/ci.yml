@@ -144,7 +144,7 @@ jobs:
           #XUnitRunnerVersion: ''
           IncludeDotNetCli: true
           DotNetCliPackageType: 'sdk'
-          DotNetCliVersion: '3.0.100-preview-009764'
+          DotNetCliVersion: '3.0.100-preview-009784'
           EnableXUnitReporter: true
           WaitForWorkItemCompletion: true
           condition: succeeded()
