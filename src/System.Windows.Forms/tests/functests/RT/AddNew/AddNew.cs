@@ -8,7 +8,7 @@ using System.ComponentModel;
 using ReflectTools;
 using ReflectTools.AutoPME;
 using WFCTestLib.Util;
-using WFCTestLib.Log;
+using WFCTestLib.Logging;
 using System.Collections;
 
 /*

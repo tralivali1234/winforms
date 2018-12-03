@@ -9,6 +9,7 @@
     <PackageReference Include="System.Data.Odbc" Version="4.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
     <PackageReference Include="System.DirectoryServices" Version="4.5.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
     <ProjectReference Include="..\..\..\..\src\System.Windows.Forms.csproj" />
     <Reference Include="Accessibility">
       <HintPath>..\..\Users\v-vinwa\.nuget\packages\microsoft.desktopui.app\3.0.0-alpha-27106-4\ref\netcoreapp3.0\Accessibility.dll</HintPath>

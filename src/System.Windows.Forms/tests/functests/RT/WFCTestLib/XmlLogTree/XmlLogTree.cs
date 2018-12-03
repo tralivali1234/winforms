@@ -144,12 +144,12 @@ namespace WFCTestLib.XmlLogTree {
             }
         }
 
-        private static void Main(string[] args) {
+        /*private static void Main(string[] args) {
             if ( args.Length != 1 )
                 PrintResultTree(ParseLogFile("results.log"));
             else
                 PrintResultTree(ParseLogFile(args[0]));
-        }
+        }*/
     }
 
     /// <summary>

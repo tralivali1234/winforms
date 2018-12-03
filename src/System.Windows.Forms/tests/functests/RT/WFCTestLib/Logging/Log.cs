@@ -4,6 +4,8 @@ using System.Xml;
 using WFCTestLib.Util;
 using System.Collections;
 using System.Security.Permissions;
+using Xunit;
+using Xunit.Abstractions;
 
 namespace WFCTestLib.Logging
 {
@@ -173,7 +175,9 @@ namespace WFCTestLib.Logging
             get { return tcr; }
         }
 		public void WriteRaw(string s)
-		{ writer.WriteRaw(s); }
+		{
+            writer.WriteRaw(s);
+        }
 
         public void WritePreFormatted(string s)
         {
@@ -434,16 +438,25 @@ namespace WFCTestLib.Logging
 		/// <param name="actual">actual value</param>
 		public virtual void LogExpectedActual(object expected, object actual)
 		{
-			writer.WriteTag(ExpectedActual, false);
-			if (expected == null)
-				writer.WriteTag(Expected, true, null, new LogAttribute[] { new LogAttribute(Type, null) });
-			else
-				writer.WriteTag(Expected, true, expected.ToString(), new LogAttribute[] { new LogAttribute(Type, expected.GetType().ToString()) });
+			WriteTag(ExpectedActual, false);
 
-			if (actual == null)
-				writer.WriteTag(Actual, true, null, new LogAttribute[] { new LogAttribute(Type, null) });
-			else
-				writer.WriteTag(Actual, true, actual.ToString(), new LogAttribute[] { new LogAttribute(Type, actual.GetType().ToString()) });
+            if (expected == null)
+            {
+                WriteTag(Expected, true, null, new LogAttribute[] { new LogAttribute(Type, null) });
+            }
+            else
+            {
+                WriteTag(Expected, true, expected.ToString(), new LogAttribute[] { new LogAttribute(Type, expected.GetType().ToString()) });
+            }
+
+            if (actual == null)
+            {
+                WriteTag(Actual, true, null, new LogAttribute[] { new LogAttribute(Type, null) });
+            }
+            else
+            {
+                WriteTag(Actual, true, actual.ToString(), new LogAttribute[] { new LogAttribute(Type, actual.GetType().ToString()) });
+            }
 			writer.CloseTag();
 		}
 
