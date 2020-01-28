@@ -6,13 +6,13 @@ using Xunit;
 
 namespace System.Windows.Forms.Tests
 {
-    public class SRCategoryAttributeTests
+    public class SRCategoryAttributeTests : IClassFixture<ThreadExceptionFixture>
     {
         [Fact]
         public void VerifyCategoryForValidCategoryAttribute()
         {
             SRCategoryAttribute srCategoryAttribute = new SRCategoryAttribute(nameof(SR.CatAccessibility));
-            Assert.True(string.Compare(srCategoryAttribute.Category, SR.CatAccessibility, StringComparison.Ordinal) == 0);            
+            Assert.True(string.Compare(srCategoryAttribute.Category, SR.CatAccessibility, StringComparison.Ordinal) == 0);
         }
 
         [Fact]
